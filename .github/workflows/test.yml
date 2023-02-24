@@ -20,10 +20,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install pylint black
-
-      - name: Run Pylint
-        run: |
-          pylint --output-format=parseable <projects/Calculate_age/calculate.py>
+          pylint $(git ls-files 'projects/Calculate_age/calculate.py')
 
   black:
     runs-on: ubuntu-latest
