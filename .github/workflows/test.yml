@@ -2,7 +2,7 @@ name: Code Quality
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   pylint:
@@ -43,4 +43,4 @@ jobs:
 
       - name: Run Black
         run: |
-          black <projects/Calculate_age/calculate.pys>
+          black <projects/Calculate_age/calculate.py>
