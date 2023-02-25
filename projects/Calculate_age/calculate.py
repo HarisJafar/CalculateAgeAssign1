@@ -2,10 +2,9 @@
 import time
 from calendar import isleap
 
-"""judge the leap year """
 def judge_leap_year(year1):
     return bool(isleap(year1))
-        
+
 """returns the number of days in each month """
 def month_days(month, leap_year):
     if month in [1, 3, 5, 7, 8, 10, 12]:
