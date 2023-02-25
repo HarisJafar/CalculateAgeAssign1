@@ -10,13 +10,14 @@ def month_days(month1, leap_year1):
     """This module returns the number of days corresponding to the month"""
     if month1 in [1, 3, 5, 7, 8, 10, 12]:
         return 31
-    if month1 in [4, 6, 9, 11]:
+    elif month1 in [4, 6, 9, 11]:
         return 30
-    if month1 == 2 and leap_year1:
+    elif month1 == 2 and leap_year1:
         return 29
-    if month1 == 2 and (not leap_year1):
+    elif month1 == 2 and (not leap_year1):
         return 28
-
+    else:
+        return -1
 
 name = input("input your name: ")
 age = input("input your age: ")
