@@ -18,9 +18,11 @@ jobs:
           python-version: '3.x'
 
       - name: Install Pylint
-        run: pip install pylint
+        run: |
+          pip install pylint
 
       - name: Run Pylint
+      - run: |    
           pylint $(git ls-files 'projects/Calculate_age/calculate.py')
 
   black:
