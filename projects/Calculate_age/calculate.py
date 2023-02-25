@@ -1,26 +1,22 @@
-# -*- coding: utf-8 -*-
+"""coding: utf-8 """
 import time
 from calendar import isleap
 
-# judge the leap year
-def judge_leap_year(year):
-    if isleap(year):
-        return True
-    else:
-        return False
+def judge_leap_year(year1):
+    """Judge Leap year"""
+    return bool(isleap(year1))
 
-
-# returns the number of days in each month
-def month_days(month, leap_year):
-    if month in [1, 3, 5, 7, 8, 10, 12]:
+def month_days(month1, leap_year1):
+    """This module returns the number of days corresponding to the month"""
+    if month1 in [1, 3, 5, 7, 8, 10, 12]:
         return 31
-    elif month in [4, 6, 9, 11]:
+    if month1 in [4, 6, 9, 11]:
         return 30
-    elif month == 2 and leap_year:
+    if month1 == 2 and leap_year1:
         return 29
-    elif month == 2 and (not leap_year):
+    if month1 == 2 and (not leap_year1):
         return 28
-
+    return -1
 
 name = input("input your name: ")
 age = input("input your age: ")
@@ -28,22 +24,21 @@ localtime = time.localtime(time.time())
 
 year = int(age)
 month = year * 12 + localtime.tm_mon
-day = 0
+DAY = 0
 
 begin_year = int(localtime.tm_year) - year
 end_year = begin_year + year
 
 # calculate the days
 for y in range(begin_year, end_year):
-    if (judge_leap_year(y)):
-        day = day + 366
+    if judge_leap_year(y):
+        DAY = DAY + 366
     else:
-        day = day + 365
+        DAY = DAY + 365
 
 leap_year = judge_leap_year(localtime.tm_year)
 for m in range(1, localtime.tm_mon):
-    day = day + month_days(m, leap_year)
+    DAY = DAY + month_days(m, leap_year)
 
-day = day + localtime.tm_mday
-print("%s's age is %d years or " % (name, year), end="")
-print("%d months or %d days" % (month, day))
+DAY = DAY + localtime.tm_mday
+print(f"{name}'s age is {year} years or {month} months or {DAY} days")
