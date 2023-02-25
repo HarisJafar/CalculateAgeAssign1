@@ -10,11 +10,11 @@ def month_days(month1, leap_year1):
     """This module returns the number of days corresponding to the month"""
     if month1 in [1, 3, 5, 7, 8, 10, 12]:
         return 31
-    elif month1 in [4, 6, 9, 11]:
+    if month1 in [4, 6, 9, 11]:
         return 30
-    elif month1 == 2 and leap_year1:
+    if month1 == 2 and leap_year1:
         return 29
-    elif month1 == 2 and (not leap_year1):
+    if month1 == 2 and (not leap_year1):
         return 28
 
 
