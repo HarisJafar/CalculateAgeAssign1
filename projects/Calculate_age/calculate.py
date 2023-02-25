@@ -3,6 +3,7 @@ import time
 from calendar import isleap
 
 def judge_leap_year(year1):
+    """Judge Leap year"""
     return bool(isleap(year1))
 
 """returns the number of days in each month """
