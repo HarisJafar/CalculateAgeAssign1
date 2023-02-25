@@ -6,7 +6,7 @@ def judge_leap_year(year1):
     """Judge Leap year"""
     return bool(isleap(year1))
 
-"""returns the number of days in each month """
+"""Judge day of month"""
 def month_days(month, leap_year):
     if month in [1, 3, 5, 7, 8, 10, 12]:
         return 31
