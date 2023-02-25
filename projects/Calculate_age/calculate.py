@@ -16,8 +16,7 @@ def month_days(month1, leap_year1):
         return 29
     if month1 == 2 and (not leap_year1):
         return 28
-    else:
-        return -1
+    return -1
 
 name = input("input your name: ")
 age = input("input your age: ")
