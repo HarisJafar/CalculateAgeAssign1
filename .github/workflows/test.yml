@@ -6,7 +6,7 @@ on:
     branches: [ master ]
 
 jobs:
-  pylint:
+  black:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,4 +21,6 @@ jobs:
       - name: Install dependencies
         run: |
           pip install pylint black
-          pylint $(git ls-files 'projects/Calculate_age/calculate.py')
+      - name: Run Black
+        run: |
+          black <projects/Calculate_age/calculate.py>
