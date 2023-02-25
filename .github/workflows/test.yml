@@ -22,21 +22,3 @@ jobs:
         run: |
           pip install pylint black
           pylint $(git ls-files 'projects/Calculate_age/calculate.py')
-  black:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Install Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.x'
-
-      - name: Install dependencies
-        run: |
-          pip install pylint black
-      - name: Run Black
-        run: |
-          black <projects/Calculate_age/calculate.py>
