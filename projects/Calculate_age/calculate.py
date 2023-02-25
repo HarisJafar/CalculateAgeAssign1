@@ -41,5 +41,4 @@ for m in range(1, localtime.tm_mon):
     DAY = DAY + month_days(m, leap_year)
 
 DAY = DAY + localtime.tm_mday
-print("%s's age is %d years or " % (name, year), end="")
-print("%d months or %d days" % (month, DAY))
+print(f"{name}'s age is {year} years or {month} months or {DAY} days")
