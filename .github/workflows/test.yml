@@ -1,4 +1,4 @@
-name: Checking black
+name: Checking black run
 
 on:
   push:
