@@ -1,26 +1,28 @@
 
-name: Code Quality
+name: Checking black
 
 on:
   push:
-    branches: [ master ]
+    branches:
+      - main
 
 jobs:
-  black:
+  run-main:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
+      - name: Checkout the code
         uses: actions/checkout@v2
 
-      - name: Install Python
+      - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.x'
+          python-version: 3.9
 
-      - name: Install dependencies
-        run: |
-          pip install black
-      - name: Run Black
-        run: |
-          black <projects/Calculate_age/calculate.py>
+      - name: Installing black
+        run:  pip install black
+      
+      - name: Installing flake8
+        run: pip install flake8
+      
+      - name: Black check
+        run: black <projects/Calculate_age/calculate.py>
