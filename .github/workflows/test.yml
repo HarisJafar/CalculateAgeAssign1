@@ -3,7 +3,7 @@ name: Checking black
 on:
   push:
     branches:
-      - HarisTesing
+      - master
 
 jobs:
   run-main:
