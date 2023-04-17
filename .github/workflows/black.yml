@@ -19,7 +19,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install black
+          pip install pylint black
       - name: Run Black
         run: |
           black <projects/Calculate_age/calculate.py>
