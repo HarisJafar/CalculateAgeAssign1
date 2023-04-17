@@ -1,0 +1,25 @@
+name: Code Quality
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  black:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          pip install black
+      - name: Run Black
+        run: |
+          black <projects/Calculate_age/calculate.py>
