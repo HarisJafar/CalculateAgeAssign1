@@ -22,4 +22,4 @@ jobs:
           pip install pylint black
       - name: Run Black
         run: |
-          black <projects/Calculate_age/calculate.py>
+          black projects/Calculate_age/calculate.py
